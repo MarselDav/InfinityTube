@@ -1,0 +1,25 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+<div>
+    <form class="img_download" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+        <label for="photo">Загрузите видео</label>
+        <input type="file" class="form-control-file" id="photo" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% for name in videos %}
+<div>
+<!--    <video width="400" height="300" controls="controls" poster="video/duel.jpg">-->
+    <video width="400" height="300" controls="controls">
+        <source src="{{ url_for('static', filename=name) }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Тег video не поддерживается вашим браузером.
+        <a href="{{ name }}">Скачайте видео</a>.
+    </video>
+    <p>{{ name }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}
