@@ -14,7 +14,7 @@ def images_galery():
     #     image.save("static/img/photo" + str(len(images) + 1) + ".png")
     if request.method == "POST":
         file = request.files["file"]
-        file.save("static/video/" + file.name + ".mp4")
+        file.save("static/video/" + str(len(videos) + 1) + ".mp4")
 
     return render_template("MainPage.html", videos=videos)
 
