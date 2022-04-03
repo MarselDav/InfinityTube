@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route("/galery", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 def images_galery():
     images = ["img/" + i for i in os.listdir("static/img")[1::]]
     if request.method == "POST":
