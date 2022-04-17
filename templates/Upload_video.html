@@ -1,0 +1,15 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+    <h1>Загрузка видео</h1>
+    <form enctype="multipart/form-data" method="post" class="upload-container">
+        <div>
+            <div>
+                <input id="file-input" type="file" name="video">
+            </div>
+            <label for="file-input">Выберите файл</label>
+            <span>или перетащите его сюда</span>
+        </div>
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock %}
