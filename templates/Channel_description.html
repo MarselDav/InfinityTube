@@ -1,0 +1,30 @@
+{% extends "Channel_base.html" %}
+
+{% block content_ %}
+
+<h1>Информация о канале</h1>
+<div class="description">
+    {{ description }}
+</div>
+<div class="dop_info">
+    <h2>Дополнительная информация</h2>
+    <div>
+        <p>Страна: {{ channel_country }}</p>
+    </div>
+    <div>
+        {% if mail_for_cooperation %}
+            <p>mail: {{ mail_for_cooperation }}</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if vk %}
+            <p>VK:<a href="{{ vk }}"></a></p>
+        {% endif %}
+
+        {% if inst %}
+            <p>Instagram:<a href="{{ inst }}"></a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

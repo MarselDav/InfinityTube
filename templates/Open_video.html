@@ -1,0 +1,59 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+{% set videofilename = "video/" + video_info["name"] %}
+
+<div class="video_block">
+    <video class="video" width="1200" controls="controls">
+        <source src="{{ url_for('static', filename=videofilename) }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Тег video не поддерживается вашим браузером.
+        <a href="{{ name }}">Скачайте видео</a>.
+    </video>
+    <div id="jumbotron" class="jumbotron">
+        <h1 class="display-4">{{ video_info["videoname"] }}</h1>
+        {% if current_user.is_authenticated %}
+            <form method="post">
+                <div id="btn_like">
+                    <p>{{ video_info["likes_count"] }}<input name="reaction" style="background-color: {{ like_color }}" class="btn btn-primary" type="submit" value="Нравится"></p>
+                </div>
+                <div id="btn_dislike">
+                    <p>{{ video_info["dislikes_count"] }}<input name="reaction" style="background-color: {{ dislike_color }}" class="btn btn-primary" type="submit" value="Не нравится"></p>
+                </div>
+            </form>
+        {% endif %}
+    </div>
+        <a href="/channel/{{ video_info['channel_id'] }}/featured" class="lead">{{ video_info["channel"] }}</a>
+        {% if current_user.is_authenticated %}
+            {% if video_info["channel_id"] != current_user.id %}
+                <form method="post">
+                    <input name="reaction" style="background-color: {{ subscribe_button_color }}" class="btn btn-primary" type="submit" value="{{ subscribe_button_text }}"></p>
+                </form>
+            {% endif %}
+        {% endif %}
+        <hr class="my-4">
+        <div>
+            <div class="content-block-fix">
+                <div class="content-block-text">
+                    <p>{{ video_info["description"] }}</p>
+                </div>
+            </div>
+        </div>
+        {% if current_user.is_authenticated %}
+            <div>
+                <form method="post">
+                    <textarea name="comment" class="form-control" placeholder="Введите текст комментария" aria-label="Введите текст комментария" aria-describedby="basic-addon2"></textarea>
+                    <input name="reaction" class="btn btn-primary" type="submit" value="Отправить">
+                </form>
+            </div>
+        {% endif %}
+        <div>
+            {% for comment_info in comments %}
+                <div class="comment">
+                    <a href="/channel/{{ comment_info[1] }}/featured">{{ comment_info[0] }}</a>: {{ comment_info[2] }}
+                </div>
+            {% endfor %}
+        </div>
+
+</div>
+
+{% endblock %}
