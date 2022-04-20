@@ -1,0 +1,484 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #fff;
+    font-family: Helvetica, sans-serif;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    background-color: rgb(194, 212, 225);
+}
+
+.channel_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #494a48;
+    font-family: Helvetica, sans-serif;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    background-color: rgb(194, 212, 225);
+}
+
+.container {
+    height: 2000px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.channel_block {
+    margin-top: 50px;
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    max-width: 200px;
+    background-color: #aba7a5;
+    border-radius: 5px;
+
+}
+
+.comment {
+    margin-top: 20px;
+}
+
+#channel_header {
+    margin-top: 20px;
+    background-color: rgb(194, 212, 225);
+}
+
+.channelname {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.description {
+    font-family: Helvetica, sans-serif;
+    margin-top: 30px;
+
+}
+
+.dop_info {
+    font-family: Helvetica, sans-serif;
+    margin-top: 30px;
+}
+
+#jumbotron {
+    position: relative;
+}
+
+#btn_like {
+    position: absolute;
+    right: 320px;
+}
+
+#btn_dislike {
+    position: absolute;
+    right: 170px;
+}
+
+.head {
+    background-color: grey;
+    text-align: center;
+}
+
+td {
+    min-width: 500px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#text-area {
+    height: 300px;
+}
+
+.spoiler {
+    width: 30%;
+    overflow: hidden;
+}
+
+.video_info {
+    text-align: center;
+    display: flex;
+    height: auto;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+
+}
+
+.video_name {
+    text-align: left;
+    display: flex;
+    height: auto;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.videoname {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.channel_name {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    color: grey;
+}
+
+.channel {
+    font-size: 15px;
+}
+
+.line_block {
+        width:400px;
+        height:300px;
+        float:left;
+        margin: 0 15px 15px 0;
+        text-align:center;
+        padding: 10px;
+}
+
+.video_block {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center
+    align-items: center
+}
+
+
+
+.video {
+    display: block;
+    margin: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.add_account_div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-top: 1px ridge #727272;
+    border-bottom: 1px ridge #727272;
+}
+
+.add_account_div:hover {
+    background-color: #e8f0fe;
+}
+
+.registration_div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-top: 1px ridge #727272;
+    border-bottom: 1px ridge #727272;
+}
+
+.list_accounts {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    background-color: #e8f0fe;
+    border: 1px solid transparent;
+    border-top: 1px ridge #727272;
+    border-bottom: 1px ridge #727272;
+}
+
+.list_accounts:hover {
+    background-color: #c5caff;
+}
+
+.registration_div:hover {
+    background-color: #e8f0fe;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+form.img_download {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.upload-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    outline: 2px dashed #5d5d5d;
+    outline-offset: -12px;
+    background-color: #fff;
+    font-family: 'Segoe UI';
+    color: #1f3c44;
+
+}
+
+.upload-container label.focus {
+     outline: 1px solid #0078d7;
+     outline: -webkit-focus-ring-color auto 5px;
+}
+
+form.sign_in {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.sign_in_buttons_block {
+    text-align: center;
+}
+
+body {
+    height: 500px;
+
+    /* ackground: linear-gradient(to right, #a4a6a5, #525252); */
+    transition: background-color 1s ease;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.main-info {
+    background: linear-gradient(to right, #dce5f2, #97b8e8);
+}
+
+.text_description {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: #3c4043;
+    font-family: "Roboto",sans-serif;
+    letter-spacing: 1px;
+    width: 20%;
+    padding: 0 15px 0 30px;
+    text-align: center;
+
+}
+
+.description_table {
+    border-radius: 10px;
+    background-color: ghostwhite;
+    box-shadow: 4px 4px 8px 4px rgba(34, 60, 80, 0.2);
+    text-align: center;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.image_tab {
+    padding: 0;
+    margin: 0;
+    width: 10%;
+}
+
+.background2 {
+    left: 0;
+    margin-left: -10px;
+    width: 110%;
+    height: 300px;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #fff;
+    font-family: Helvetica, sans-serif;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+.header_links {
+    display: flex;
+    align-items: center;
+}
+
+.header_links2 {
+    margin-right: 50px;
+    display: flex;
+    align-items: left;
+}
+
+.channel_links {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    font-size: 20px;
+    margin-left: 5px;
+    position: relative;
+    color: rgb(110, 95, 120); /*задаём цвет ссылки*/
+    cursor: pointer;
+    text-decoration: none; /*убираем подчёркивание*/
+}
+
+.channel_links:hover {
+    background-color: #f8f9fb;
+    border-radius: 4px;
+}
+
+.links {
+    padding: 8px 15px;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.links:hover {
+    background-color: #f8f9fb;
+    border-radius: 4px;
+}
+
+.links {
+    position: relative;
+    color: rgb(110, 95, 120); /*задаём цвет ссылки*/
+    cursor: pointer;
+    line-height: 1; /*задаём высоту строки*/
+    text-decoration: none; /*убираем подчёркивание*/
+}
+
+.links:after {
+    display: block;
+    position: absolute;
+    left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0; /*задаём длинну линии до наведения курсора*/
+    height: 2px; /*задаём ширину линии*/
+    color: rgba(66, 133, 244, 255);
+    background-color: rgba(66, 133, 244, 255); /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.links:hover:after, .inks:focus:after {
+    color: red;
+    width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.links {
+    transition: 0.1s linear; /* Время изменения */
+}
+
+.links:hover {
+    color: rgba(66, 133, 244, 255); /* Цвет текста */
+}
+
+.logo {
+    text-align: center;
+}
+
+.laptop {
+    text-align: center;
+}
+
+.name_of_browser {
+    font-family: Helvetica, sans-serif;
+    /* font-family: Helvetica, sans-serif; */
+    font-size: 50px;
+    text-align: center;
+}
+
+.download {
+    position: relative;
+    text-align: center;
+}
+
+.download_button {
+    border-radius: 20px;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: rgba(66, 133, 244, 255);
+    color: white;
+    border: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.download_button:hover {
+    background-color: #385478;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    margin-top: 5px;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
