@@ -1,4 +1,5 @@
 import os
+from waitress import serve
 
 from flask import Flask, render_template, request, make_response, redirect
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
@@ -278,7 +279,7 @@ def channel_mainpage(channel_id):  # открыть главную страни�
 
     db_sess = db_session.create_session()
     if request.method == "POST":
-        pass
+        print("Подписаться")
     user_info = db_sess.query(User).filter(User.id == channel_id).first()
     channel_name = user_info.name
 
@@ -329,20 +330,23 @@ def channel_settings(channel_id):  # настройки канала
             channel_info = db_sess.query(User).filter(User.id == channel_id).first()
 
             default_settings = {
-                "channel_description": channel_info.channel_description,
-                "channel_country": channel_info.channel_country,
-                "mail_for_cooperation": channel_info.mail_for_cooperation,
-                "vk": channel_info.vk,
-                "inst": channel_info.inst,
+                "name": channel_info.name if channel_info.name is not None else "",
+                "description": channel_info.channel_description if channel_info.channel_description is not None else "",
+                "country": channel_info.channel_country if channel_info.channel_country is not None else "",
+                "mail": channel_info.mail_for_cooperation if channel_info.mail_for_cooperation is not None else "",
+                "vk": channel_info.vk if channel_info.vk is not None else "",
+                "inst": channel_info.inst if channel_info.inst is not None else "",
             }
 
             if form.validate_on_submit():
+                channel_name = form.channel_name.data
                 channel_description = request.form["channel_description"]
                 channel_country = form.country.data
                 mail_for_cooperation = form.mail_for_cooperation.data
                 vk = form.vk.data
                 inst = form.inst.data
-                set_chanel_settings(channel_id, channel_description, channel_country, mail_for_cooperation, vk, inst)
+                set_chanel_settings(channel_name, channel_id, channel_description, channel_country,
+                                    mail_for_cooperation, vk, inst)
                 return redirect(f"/channel/{channel_id}/featured")
 
             return render_template("Channel_settings.html", form=form, default_settings=default_settings)
@@ -427,11 +431,11 @@ def add_new_comment(videoid, personid, comment_text):  # добавить ком
     db_sess.commit()
 
 
-def set_chanel_settings(channel_id, description, country, mail, vk, inst):  # установить настройки канала
-    print(channel_id)
+def set_chanel_settings(channel_name, channel_id, description, country, mail, vk, inst):  # установить настройки канала
     db_sess = db_session.create_session()
 
     channel = db_sess.query(User).filter(User.id == channel_id).first()
+    channel.name = channel_name
     channel.channel_description = description
     channel.channel_country = country
     channel.mail_for_cooperation = mail
@@ -443,7 +447,8 @@ def set_chanel_settings(channel_id, description, country, mail, vk, inst):  # у
 def main():  # главная функция
     db_session.global_init("db/database.db")
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    serve(app, host='0.0.0.0', port=port)
+    # app.run(host='0.0.0.0', port=port)
     # app.run(host="127.0.0.1", port=5000)
 
 
