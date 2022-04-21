@@ -1,0 +1,31 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+<div>
+    <form class="img_download" method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <input name="username" type="text" class="form-control" placeholder="Придумайте имя пользователя" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+            <input name="email" type="text" class="form-control" placeholder="Адрес эл. почты" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div>
+            <p style="color: red">{{ email_message }}</p>
+        </div>
+        <div class="input-group mb-3">
+            <input name="password" type="password" class="form-control" placeholder="Пароль" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="confirm_password" type="password" class="form-control" placeholder="Подтвердите пароль" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div>
+            <p style="color: red">{{ confirm_password_message }}</p>
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
+    </form>
+</div>
+
+{% endblock %}

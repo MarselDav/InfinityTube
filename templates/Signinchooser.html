@@ -1,0 +1,28 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+<div>
+    <form class="sign_in" method="post" enctype="multipart/form-data">
+        <h3 align="center">Выберите аккаунт</h3>
+        <div class="list_accounts">
+            {% for account in accounts %}
+
+            <div>
+                <a href="/login/{{ account }}" class="account">{{ account }}</a>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="sign_in_buttons_block">
+            <div class="add_account_div">
+                <a href="/login" class="add_account">Добавить аккаунт</a>
+            </div>
+            <div class="registration_div">
+                <a  href="/registration" class="registration">Зарегистрировать аккаунт</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

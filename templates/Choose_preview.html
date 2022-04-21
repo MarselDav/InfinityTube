@@ -1,0 +1,17 @@
+{% extends "InfinityTube_base.html" %}
+
+{% block content %}
+    <h1>Иконка для вашего видео</h1>
+    <form method="POST" action="" class="">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.videofile(class="form-control") }}<br>
+            {% for error in form.videofile.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+
+    </form>
+{% endblock %}

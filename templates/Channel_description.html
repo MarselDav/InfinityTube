@@ -1,0 +1,34 @@
+{% extends "Channel_base.html" %}
+
+{% block content_ %}
+
+<h1>Информация о канале</h1>
+<div class="description">
+    {{ description }}
+</div>
+<div>
+    Все просмотры на видео: {{ channel_info["all_videos_watches"] }}<br>
+    Подписчиков: {{ channel_info["subscribers_count"] }}
+</div>
+<div class="dop_info">
+    <h2>Дополнительная информация</h2>
+    <div>
+        <p>Страна: {{ channel_info["channel_country"] }}</p>
+    </div>
+    <div>
+        {% if channel_info["mail_for_cooperation"] %}
+            <p>mail: {{ channel_info["mail_for_cooperation"] }}</p>
+        {% endif %}
+    </div>
+    <div>
+        {% if channel_info["vk"] %}
+            <p>VK:<a href="{{ channel_info['vk'] }}"></a></p>
+        {% endif %}
+
+        {% if channel_info["inst"] %}
+            <p>Instagram:<a href="{{ channel_info['inst'] }}"></a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
